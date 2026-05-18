@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{VALUE_PROP}}" />
+  <title>{{BUSINESS_NAME}} — {{VALUE_PROP}}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family={{DISPLAY_FONT_QUERY}}:wght@600;700&family={{BODY_FONT_QUERY}}:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN Play (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '{{PRIMARY_COLOR}}',
+            'brand-accent':  '{{ACCENT_COLOR}}',
+            'brand-dark':    '{{DARK_COLOR}}',
+            'brand-light':   '{{LIGHT_COLOR}}',
+          },
+          fontFamily: {
+            display: ['{{DISPLAY_FONT}}', 'serif'],
+            body:    ['{{BODY_FONT}}', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: '{{BODY_FONT}}', system-ui, sans-serif; background: {{LIGHT_COLOR}}; color: {{DARK_COLOR}}; }
+    .font-display { font-family: '{{DISPLAY_FONT}}', serif; }
+    /* Header transition */
+    #site-header { transition: background-color 250ms ease, backdrop-filter 250ms ease, border-color 250ms ease; }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.55); backdrop-filter: blur(12px); border-bottom-color: rgba(255,255,255,0.08); }
+    /* Reduced motion — also covers screenshot/print environments. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      [data-anim], [data-reveal], [data-reveal] *, [data-stagger] > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ============================================================ -->
+<!-- HEADER                                                       -->
+<!-- ============================================================ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+  <nav class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display text-xl font-bold text-white tracking-tight">{{BUSINESS_NAME}}</a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
+      <a href="#proof" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Results</a>
+      <a href="#about" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+      <a href="#faq" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+      <a href="#contact" class="bg-brand-accent text-brand-dark px-5 py-2.5 rounded-lg text-sm font-semibold hover:scale-105 transition-transform duration-200">{{PRIMARY_CTA_SHORT}}</a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu-panel" class="hidden md:hidden bg-brand-dark/95 backdrop-blur border-t border-white/10">
+    <div class="px-4 py-4 space-y-1">
+      <a href="#services" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Services</a>
+      <a href="#proof" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Results</a>
+      <a href="#about" class="block py-3 text-white/85 hover:text-white border-b border-white/10">About</a>
+      <a href="#faq" class="block py-3 text-white/85 hover:text-white border-b border-white/10">FAQ</a>
+      <a href="#contact" class="block mt-3 bg-brand-accent text-brand-dark text-center px-5 py-3 rounded-lg font-semibold">{{PRIMARY_CTA_SHORT}}</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HERO                                                         -->
+<!-- ============================================================ -->
+<section id="top" class="relative min-h-[100svh] flex items-center bg-brand-primary text-white overflow-hidden">
+  <!-- Decorative gradient — single, subtle. Replace with brand photo when available. -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-dark"></div>
+  <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 20%, {{ACCENT_COLOR}}33 0%, transparent 50%), radial-gradient(circle at 80% 80%, {{ACCENT_COLOR}}22 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-32 md:py-40 w-full">
+    <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-6 opacity-0 translate-y-4" data-anim="eyebrow">
+      {{EYEBROW}}
+    </p>
+
+    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight max-w-4xl mb-6 opacity-0 translate-y-6" data-anim="headline">
+      {{HERO_HEADLINE}}
+    </h1>
+
+    <p class="text-xl md:text-2xl text-white/75 max-w-2xl mb-10 leading-relaxed opacity-0 translate-y-6" data-anim="sub">
+      {{HERO_SUB}}
+    </p>
+
+    <div class="flex flex-wrap gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <a href="#contact" class="inline-flex items-center justify-center bg-brand-accent text-brand-dark font-semibold px-8 py-4 rounded-lg text-lg hover:scale-105 transition-transform duration-200 shadow-lg min-h-[48px]">
+        {{PRIMARY_CTA}}
+      </a>
+      <a href="#services" class="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-brand-dark transition-colors duration-200 min-h-[48px]">
+        See How It Works
+      </a>
+    </div>
+
+    <!-- Inline social proof — single line, above the fold -->
+    <div class="mt-12 flex items-center gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <div class="flex -space-x-2">
+        <div class="w-10 h-10 rounded-full bg-brand-accent/30 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/50 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/70 border-2 border-brand-primary"></div>
+      </div>
+      <div class="text-sm text-white/80">
+        <span class="text-brand-accent font-semibold">★★★★★</span>
+        <span class="ml-2">{{SOCIAL_PROOF_LINE}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TRUST BAR                                                    -->
+<!-- ============================================================ -->
+<section class="bg-brand-dark py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <p class="text-center text-xs text-white/40 uppercase tracking-widest mb-8" data-reveal>Trusted by teams at</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-70" data-stagger>
+      <!-- Replace with real client logos. Keep grayscale, lighten opacity on hover. -->
+      <div class="text-white/60 font-display text-xl font-semibold">[CLIENT 1]</div>
+      <div class="text-white/60 font-display text-xl font-semibold tracking-tight">[CLIENT 2]</div>
+      <div class="text-white/60 font-display text-xl font-semibold italic">[CLIENT 3]</div>
+      <div class="text-white/60 font-display text-xl font-semibold uppercase tracking-widest">[CLIENT 4]</div>
+      <div class="text-white/60 font-display text-xl font-semibold">[CLIENT 5]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES                                                     -->
+<!-- ============================================================ -->
+<section id="services" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">What we do</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">{{SERVICES_HEADLINE}}</h2>
+      <p class="text-xl text-gray-600">{{SERVICES_SUB}}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Service 1 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: {{ACCENT_COLOR}}1a;">
+          <svg class="w-7 h-7" fill="none" stroke="{{ACCENT_COLOR}}" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">[SERVICE 1 NAME]</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">[Outcome-focused description — what the client walks away with, not just what you do.]</p>
+        <a href="#contact" class="text-brand-dark font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: {{ACCENT_COLOR}};">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: {{ACCENT_COLOR}}1a;">
+          <svg class="w-7 h-7" fill="none" stroke="{{ACCENT_COLOR}}" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">[SERVICE 2 NAME]</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">[CLIENT TO PROVIDE outcome-focused description.]</p>
+        <a href="#contact" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: {{ACCENT_COLOR}};">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: {{ACCENT_COLOR}}1a;">
+          <svg class="w-7 h-7" fill="none" stroke="{{ACCENT_COLOR}}" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">[SERVICE 3 NAME]</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">[CLIENT TO PROVIDE outcome-focused description.]</p>
+        <a href="#contact" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: {{ACCENT_COLOR}};">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROOF                                                        -->
+<!-- ============================================================ -->
+<section id="proof" class="py-24 md:py-32 bg-brand-dark text-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">Proof</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">{{PROOF_HEADLINE}}</h2>
+      <p class="text-xl text-white/70">{{PROOF_SUB}}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Testimonial 1 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"[CLIENT TO PROVIDE — a real testimonial that names a specific outcome.]"</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: {{ACCENT_COLOR}};">[I]</div>
+          <div>
+            <p class="font-semibold">[Client Name]</p>
+            <p class="text-white/50 text-sm">[Title, Company]</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 2 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"[CLIENT TO PROVIDE — second testimonial, different industry or use case.]"</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: {{ACCENT_COLOR}};">[I]</div>
+          <div>
+            <p class="font-semibold">[Client Name]</p>
+            <p class="text-white/50 text-sm">[Title, Company]</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 3 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"[CLIENT TO PROVIDE — third testimonial, ideally with a quantified result.]"</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: {{ACCENT_COLOR}};">[I]</div>
+          <div>
+            <p class="font-semibold">[Client Name]</p>
+            <p class="text-white/50 text-sm">[Title, Company]</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Stats row — delete if you can't provide real numbers. Do NOT invent. -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">[#]</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">[Metric]</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">[#]</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">[Metric]</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">[#]</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">[Metric]</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">[#]</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">[Metric]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT                                                        -->
+<!-- ============================================================ -->
+<section id="about" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: {{ACCENT_COLOR}};">About</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-6 leading-tight">{{ABOUT_HEADLINE}}</h2>
+      <div class="text-lg text-gray-600 leading-relaxed space-y-4">
+        <p>[CLIENT TO PROVIDE — paragraph 1: who you are and what you believe.]</p>
+        <p>[CLIENT TO PROVIDE — paragraph 2: credentials, experience, or origin story.]</p>
+      </div>
+      <a href="#contact" class="mt-8 inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all duration-200" style="color: {{ACCENT_COLOR}};">
+        Work with us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+      </a>
+    </div>
+    <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-brand-primary" data-reveal>
+      <!-- Replace with real photo: assets/{{BUSINESS_SLUG}}-brand/about.jpg -->
+      <div class="absolute inset-0 flex items-center justify-center text-white/40 font-display text-xl">[ABOUT PHOTO]</div>
+      <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/60 via-transparent to-transparent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ                                                          -->
+<!-- ============================================================ -->
+<section id="faq" class="py-24 md:py-32 bg-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: {{ACCENT_COLOR}};">FAQ</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark">Common questions</h2>
+    </div>
+
+    <div class="space-y-3" data-reveal>
+      <!-- FAQ items — answer real objections, not fluff -->
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">[Question 1 — common objection]</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: {{ACCENT_COLOR}};">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          [Answer that resolves the objection clearly and without hedging.]
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">[Question 2 — pricing / process question]</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: {{ACCENT_COLOR}};">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          [Direct answer.]
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">[Question 3 — timeline / availability]</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: {{ACCENT_COLOR}};">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          [Direct answer.]
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">[Question 4 — what makes you different]</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: {{ACCENT_COLOR}};">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          [Direct answer.]
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT                                                      -->
+<!-- ============================================================ -->
+<section id="contact" class="py-24 md:py-32 bg-brand-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, {{ACCENT_COLOR}}55 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6" data-reveal>{{CONTACT_HEADLINE}}</h2>
+    <p class="text-white/80 text-xl mb-12 max-w-xl mx-auto" data-reveal>{{CONTACT_SUB}}</p>
+
+    <form id="contact-form" class="bg-white rounded-2xl p-6 md:p-8 text-left shadow-2xl text-brand-dark" data-reveal novalidate>
+      <div class="grid md:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label for="cf-name" class="block text-sm font-semibold text-gray-700 mb-2">Full name <span style="color: {{ACCENT_COLOR}};">*</span></label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: {{ACCENT_COLOR}};" />
+        </div>
+        <div>
+          <label for="cf-email" class="block text-sm font-semibold text-gray-700 mb-2">Email <span style="color: {{ACCENT_COLOR}};">*</span></label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: {{ACCENT_COLOR}};" />
+        </div>
+      </div>
+      <div class="mb-5">
+        <label for="cf-phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+               class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+               style="--tw-ring-color: {{ACCENT_COLOR}};" />
+      </div>
+      <div class="mb-6">
+        <label for="cf-message" class="block text-sm font-semibold text-gray-700 mb-2">How can we help?</label>
+        <textarea id="cf-message" name="message" rows="4"
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition resize-none"
+                  style="--tw-ring-color: {{ACCENT_COLOR}};"></textarea>
+      </div>
+      <button type="submit"
+              class="w-full font-bold py-4 rounded-lg text-lg hover:scale-[1.02] transition-transform duration-200 shadow-lg min-h-[48px]"
+              style="background-color: {{ACCENT_COLOR}}; color: {{DARK_COLOR}};">
+        {{PRIMARY_CTA}}
+      </button>
+      <p class="text-center text-gray-500 text-sm mt-4">No spam. We respond within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer class="bg-brand-dark text-white/70 py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <p class="font-display text-xl font-bold text-white mb-3">{{BUSINESS_NAME}}</p>
+        <p class="text-sm text-white/60 max-w-sm leading-relaxed">{{FOOTER_TAGLINE}}</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Navigate</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#proof" class="hover:text-white transition-colors">Results</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Contact</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:[email@{{BUSINESS_SLUG}}.com]" class="hover:text-white transition-colors">[email@{{BUSINESS_SLUG}}.com]</a></li>
+          <li><a href="tel:[+15551234567]" class="hover:text-white transition-colors">[+1 (555) 123-4567]</a></li>
+          <li class="text-white/50">[Address line 1]<br/>[City, State ZIP]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-white/40">
+      <p>&copy; <span id="year"></span> {{BUSINESS_NAME}}. All rights reserved.</p>
+      <p>Designed with the huashu-design system.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- SCRIPTS (loaded at end of body)                              -->
+<!-- ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="./main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

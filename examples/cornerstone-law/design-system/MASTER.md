@@ -1,0 +1,88 @@
+# Cornerstone Law — Design System
+
+> **Source:** vibe preset `premium-trust`. When `ui-ux-pro-max`'s `search.py --design-system` is available, replace this file with its output and add the rationale block from its response.
+
+**Industry:** boutique law firm estate planning
+**Descriptors:** premium trust minimal authoritative
+**Conversion goal:** form
+
+---
+
+## Pattern
+
+Single-page service site, mobile-first. Section order:
+
+```
+[ HERO ] → [ TRUST BAR ] → [ SERVICES ] → [ PROOF ] →
+[ ABOUT ] → [ FAQ ] → [ FINAL CTA ] → [ FOOTER ]
+```
+
+---
+
+## Style
+
+`premium-trust` — see `docs/SOP.md` for what this preset commits to in tone, density, and animation rhythm.
+
+---
+
+## Colors
+
+| Token            | Hex                | Usage                                    |
+| ---------------- | ------------------ | ---------------------------------------- |
+| `brand-primary` | `#1a2332` | Hero background, primary CTA fill        |
+| `brand-accent`  | `#c9a55c`  | One highlight per section, link hover    |
+| `brand-dark`    | `#0f172a`    | Body headings, footer background         |
+| `brand-light`   | `#f8f5f0`   | Page background, card fills              |
+
+**Rules:**
+- Accent appears on **exactly one** element per section.
+- Primary CTA always uses `brand-accent` fill; secondary CTA uses outline only.
+- Never apply accent to body text — only interactive or emphasized elements.
+
+---
+
+## Typography
+
+- **Display:** `Playfair Display` — weights 600, 700. Used for `h1`, `h2`, hero numbers.
+- **Body:** `Inter` — weights 400, 500, 600. Used for everything else.
+
+**Scale:**
+
+| Use            | Mobile    | Desktop   |
+| -------------- | --------- | --------- |
+| `h1` hero      | `text-5xl` | `text-7xl` |
+| `h2` section   | `text-4xl` | `text-5xl` |
+| `h3` card      | `text-xl`  | `text-xl`  |
+| body lead      | `text-xl`  | `text-2xl` |
+| body           | `text-base`| `text-base`|
+| eyebrow / label| `text-sm`  | `text-sm`  |
+
+Body text never goes below `text-base` (16px) — prevents iOS zoom-on-focus.
+
+---
+
+## Effects
+
+- **Card hover:** `hover:-translate-y-1 hover:shadow-xl transition-all duration-300`
+- **Button hover:** `hover:scale-105 transition-all duration-200`
+- **Link hover:** color transition only, never underline animations longer than 300ms
+- **Section reveal:** GSAP `opacity 0 → 1, y 40 → 0`, `ease: power2.out`, `duration 0.8`, `start: top 85%`
+- **Hero entrance:** staggered timeline, `ease: power3.out`, `duration: 0.9`, 0.6s overlap
+
+---
+
+## Anti-Patterns (forbidden for this project)
+
+- Purple gradients of any kind
+- Emoji used as iconography (use Heroicons inline SVG)
+- More than one primary CTA per section
+- Animation on every element (max: 4 hero entrance + section reveals)
+- Lorem ipsum or fake testimonials shipped to production
+- Stock photo of a laptop on a desk
+- "data slop" — invented statistics
+
+---
+
+## Per-page overrides
+
+If pages need to diverge from this system, document the delta in `design-system/pages/<page>.md`. Do not edit `MASTER.md` per-page.
