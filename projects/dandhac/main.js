@@ -1,0 +1,118 @@
+/* D&H Heating & Air Conditioning — animations + interactions
+ * GSAP + ScrollTrigger loaded from CDN in index.html.
+ */
+(function () {
+  'use strict';
+
+  if (typeof window.gsap === 'undefined') {
+    console.warn('GSAP not loaded — animations disabled.');
+    return;
+  }
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!reducedMotion) {
+    // ---- Hero entrance ----
+    gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.9 } })
+      .to('[data-anim="eyebrow"]',  { opacity: 1, y: 0 })
+      .to('[data-anim="headline"]', { opacity: 1, y: 0 }, '-=0.6')
+      .to('[data-anim="sub"]',      { opacity: 1, y: 0 }, '-=0.6')
+      .to('[data-anim="cta"]',      { opacity: 1, y: 0 }, '-=0.6');
+
+    // ---- Section reveals ----
+    gsap.utils.toArray('[data-reveal]').forEach(function (el) {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+      });
+    });
+
+    // ---- Stagger reveals for grids ----
+    gsap.utils.toArray('[data-stagger]').forEach(function (group) {
+      gsap.from(group.children, {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.1,
+        scrollTrigger: { trigger: group, start: 'top 85%' },
+      });
+    });
+  }
+
+  // ---- Mobile menu toggle ----
+  var menuBtn = document.getElementById('mobile-menu-btn');
+  var menuPanel = document.getElementById('mobile-menu-panel');
+  if (menuBtn && menuPanel) {
+    menuBtn.addEventListener('click', function () {
+      var open = menuPanel.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    menuPanel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menuPanel.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ---- FAQ accordion ----
+  document.querySelectorAll('[data-faq]').forEach(function (item) {
+    var btn = item.querySelector('[data-faq-trigger]');
+    var panel = item.querySelector('[data-faq-panel]');
+    var icon = item.querySelector('[data-faq-icon]');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function () {
+      var isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      if (icon) icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // ---- Header background on scroll ----
+  var header = document.getElementById('site-header');
+  if (header) {
+    var onScroll = function () {
+      if (window.scrollY > 20) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ---- Smooth scroll for in-page anchors ----
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ---- Form noop (replace with real handler) ----
+  var form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+      }
+      setTimeout(function () {
+        form.innerHTML =
+          '<div class="text-center py-8">' +
+          '<h3 class="font-display text-2xl font-bold text-gray-900 mb-2">Thanks — we got it.</h3>' +
+          '<p class="text-gray-600">We respond within one business day.</p>' +
+          '</div>';
+      }, 600);
+    });
+  }
+})();

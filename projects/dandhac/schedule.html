@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Schedule HVAC service with D&H. Same-day appointments available. Confirmed within one hour." />
+  <title>Schedule Service — D&H Heating & Air Conditioning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #F7F4EE; color: #0A1F36; }
+    .font-display { font-family: 'Manrope', system-ui, sans-serif; }
+    #site-header { transition: background-color 250ms ease, backdrop-filter 250ms ease, border-color 250ms ease; }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.55); backdrop-filter: blur(12px); border-bottom-color: rgba(255,255,255,0.08); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+    input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px #E8731A33; border-color: #E8731A; }
+    .urgency-btn { transition: all 200ms; }
+    .urgency-btn[aria-pressed="true"] { background: #E8731A; color: #0A1F36; border-color: #E8731A; }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- HEADER (shared) -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+  <nav class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+    <a href="./index.html" class="font-display text-xl font-bold text-white tracking-tight">D&amp;H Heating &amp; Air</a>
+    <div class="hidden md:flex items-center gap-7">
+      <a href="./index.html#services" class="text-white/80 hover:text-white text-sm font-medium">Services</a>
+      <a href="./ac-repair.html" class="text-white/80 hover:text-white text-sm font-medium">AC Repair</a>
+      <a href="./index.html#proof" class="text-white/80 hover:text-white text-sm font-medium">Reviews</a>
+      <a href="./index.html#about" class="text-white/80 hover:text-white text-sm font-medium">About</a>
+      <a href="tel:+15555550199" class="text-white/90 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.9 1.37l.7 2.09a2 2 0 01-.45 2.02l-1.27 1.27a16 16 0 006.4 6.4l1.27-1.27a2 2 0 012.02-.45l2.09.7A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.6 21 3 14.4 3 6V5z"/></svg>
+        (555) 555-0199
+      </a>
+      <span class="bg-white/15 text-white px-5 py-2.5 rounded-lg text-sm font-semibold border border-white/20">Scheduling</span>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu-panel" class="hidden md:hidden bg-brand-dark/95 backdrop-blur border-t border-white/10">
+    <div class="px-4 py-4 space-y-1">
+      <a href="./index.html#services" class="block py-3 text-white/85 border-b border-white/10">Services</a>
+      <a href="./ac-repair.html" class="block py-3 text-white/85 border-b border-white/10">AC Repair</a>
+      <a href="./index.html#proof" class="block py-3 text-white/85 border-b border-white/10">Reviews</a>
+      <a href="./index.html#about" class="block py-3 text-white/85 border-b border-white/10">About</a>
+      <a href="tel:+15555550199" class="block py-3 text-white/85 border-b border-white/10 font-semibold">Call (555) 555-0199</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO + FORM -->
+<section class="bg-brand-primary text-white pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-dark"></div>
+  <div class="absolute inset-0 opacity-25" style="background-image: radial-gradient(circle at 80% 0%, #E8731A55 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">Schedule Service</p>
+      <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-4">Tell us what's wrong.</h1>
+      <p class="text-xl text-white/80 leading-relaxed">A real human reads every request. We'll confirm a tech name and an arrival window within one business hour.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-light py-16 md:py-20 -mt-16 md:-mt-24 relative z-10">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-[1fr,360px] gap-8">
+
+    <!-- FORM -->
+    <form id="schedule-form" class="bg-white rounded-2xl shadow-2xl p-6 md:p-10" novalidate>
+
+      <!-- Urgency selector -->
+      <fieldset class="mb-8">
+        <legend class="block font-display text-lg font-bold text-brand-dark mb-3">How urgent is this?</legend>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup">
+          <button type="button" class="urgency-btn border border-gray-300 rounded-lg px-4 py-4 text-left hover:border-brand-accent" aria-pressed="false" data-value="emergency">
+            <span class="font-semibold block">Emergency</span>
+            <span class="text-sm text-gray-500">No heat / no cool, today</span>
+          </button>
+          <button type="button" class="urgency-btn border border-gray-300 rounded-lg px-4 py-4 text-left hover:border-brand-accent" aria-pressed="true" data-value="soon">
+            <span class="font-semibold block">Soon</span>
+            <span class="text-sm text-gray-500">Within 2–3 days</span>
+          </button>
+          <button type="button" class="urgency-btn border border-gray-300 rounded-lg px-4 py-4 text-left hover:border-brand-accent" aria-pressed="false" data-value="planning">
+            <span class="font-semibold block">Planning</span>
+            <span class="text-sm text-gray-500">Quote or estimate</span>
+          </button>
+        </div>
+        <input type="hidden" name="urgency" value="soon" id="urgency-input">
+
+        <!-- Emergency notice -->
+        <div id="emergency-notice" class="hidden mt-4 bg-brand-accent/10 border-l-4 border-brand-accent p-4 rounded">
+          <p class="text-sm text-brand-dark"><strong>Emergency?</strong> Call us at <a href="tel:+15555550199" class="font-semibold underline">(555) 555-0199</a> — we'll get a tech rolling faster than this form can.</p>
+        </div>
+      </fieldset>
+
+      <!-- Service type -->
+      <fieldset class="mb-8">
+        <legend class="block font-display text-lg font-bold text-brand-dark mb-3">What kind of service?</legend>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="ac-repair" class="sr-only">
+            <span class="block text-sm font-semibold">AC Repair</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="heating-repair" class="sr-only">
+            <span class="block text-sm font-semibold">Heating Repair</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="new-install" class="sr-only">
+            <span class="block text-sm font-semibold">New System Quote</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="maintenance" class="sr-only">
+            <span class="block text-sm font-semibold">Tune-Up</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="iaq" class="sr-only">
+            <span class="block text-sm font-semibold">Indoor Air Quality</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="second-opinion" class="sr-only">
+            <span class="block text-sm font-semibold">Second Opinion</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="duct" class="sr-only">
+            <span class="block text-sm font-semibold">Duct Work</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="not-sure" class="sr-only">
+            <span class="block text-sm font-semibold">Not sure yet</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Contact info -->
+      <fieldset class="mb-8">
+        <legend class="block font-display text-lg font-bold text-brand-dark mb-3">Your info</legend>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="f-name" class="block text-sm font-semibold text-gray-700 mb-1.5">Full name *</label>
+            <input id="f-name" type="text" required autocomplete="name" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+          </div>
+          <div>
+            <label for="f-phone" class="block text-sm font-semibold text-gray-700 mb-1.5">Phone *</label>
+            <input id="f-phone" type="tel" required autocomplete="tel" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+          </div>
+          <div>
+            <label for="f-email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+            <input id="f-email" type="email" autocomplete="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+          </div>
+          <div>
+            <label for="f-zip" class="block text-sm font-semibold text-gray-700 mb-1.5">ZIP code *</label>
+            <input id="f-zip" type="text" required autocomplete="postal-code" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+          </div>
+          <div class="md:col-span-2">
+            <label for="f-address" class="block text-sm font-semibold text-gray-700 mb-1.5">Service address</label>
+            <input id="f-address" type="text" autocomplete="street-address" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Time preference -->
+      <fieldset class="mb-8">
+        <legend class="block font-display text-lg font-bold text-brand-dark mb-3">When works for you?</legend>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
+            <input type="checkbox" name="window" value="morning" class="sr-only">
+            <span class="block text-sm font-semibold">Morning</span>
+            <span class="block text-xs text-gray-500">8 – noon</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
+            <input type="checkbox" name="window" value="afternoon" class="sr-only">
+            <span class="block text-sm font-semibold">Afternoon</span>
+            <span class="block text-xs text-gray-500">12 – 5pm</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
+            <input type="checkbox" name="window" value="evening" class="sr-only">
+            <span class="block text-sm font-semibold">Evening</span>
+            <span class="block text-xs text-gray-500">5 – 8pm</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
+            <input type="checkbox" name="window" value="weekend" class="sr-only">
+            <span class="block text-sm font-semibold">Weekend</span>
+            <span class="block text-xs text-gray-500">Sat / Sun</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Notes -->
+      <div class="mb-8">
+        <label for="f-notes" class="block font-display text-lg font-bold text-brand-dark mb-3">Anything we should know?</label>
+        <textarea id="f-notes" rows="4" placeholder="Brand of system, sounds it's making, when the problem started, dogs in the yard, gate code, etc." class="w-full border border-gray-300 rounded-lg px-4 py-3 resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-brand-accent text-brand-dark font-bold py-4 rounded-lg text-lg hover:scale-[1.01] transition-transform shadow-lg min-h-[48px]">
+        Send Service Request
+      </button>
+      <p class="text-center text-gray-500 text-sm mt-4">We'll text or call within one business hour with a confirmed window and tech name.</p>
+    </form>
+
+    <!-- TRUST SIDEBAR -->
+    <aside class="space-y-4">
+      <!-- Phone CTA -->
+      <div class="bg-brand-primary text-white rounded-2xl p-6 shadow-lg">
+        <p class="text-brand-accent text-xs font-semibold uppercase tracking-widest mb-2">Faster than a form?</p>
+        <p class="font-display text-2xl font-bold mb-3">Call us directly.</p>
+        <a href="tel:+15555550199" class="block bg-brand-accent text-brand-dark text-center font-bold py-3 rounded-lg hover:scale-105 transition-transform">
+          (555) 555-0199
+        </a>
+        <p class="text-white/60 text-sm mt-3">Real humans answer Mon–Sat, 7am–7pm. After-hours line for emergencies.</p>
+      </div>
+
+      <!-- Trust facts -->
+      <div class="bg-white rounded-2xl p-6 border border-gray-200">
+        <ul class="space-y-4">
+          <li class="flex gap-3 items-start">
+            <div class="w-10 h-10 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark">90-min avg. response</p>
+              <p class="text-sm text-gray-600">During business hours, Mon–Sat</p>
+            </div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <div class="w-10 h-10 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark">4.9★ across 2,100+ reviews</p>
+              <p class="text-sm text-gray-600">Google, Yelp, BBB combined</p>
+            </div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <div class="w-10 h-10 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark">Family-owned since 1972</p>
+              <p class="text-sm text-gray-600">Third generation, same standards</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div class="bg-white rounded-2xl p-6 border border-gray-200">
+        <p class="font-display text-base font-bold text-brand-dark mb-3">Hours</p>
+        <ul class="text-sm text-gray-700 space-y-1.5">
+          <li class="flex justify-between"><span>Mon – Fri</span><span class="text-gray-500">7am – 7pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-gray-500">8am – 5pm</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-gray-500">Emergency only</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="bg-white py-20">
+  <div class="max-w-5xl mx-auto px-4 md:px-6">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-brand-dark text-center mb-12" data-reveal>What happens after you hit send.</h2>
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <div class="text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">1</div>
+        <h3 class="font-display text-lg font-bold text-brand-dark mb-2">Within 1 hour</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">A dispatcher (named Sandy, usually) calls or texts to confirm your appointment window and which tech to expect.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">2</div>
+        <h3 class="font-display text-lg font-bold text-brand-dark mb-2">Tech arrives on time</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">You'll get a text with the tech's photo and ETA 30 minutes out. Shoe covers go on at the door. Diagnostic is $89 flat.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">3</div>
+        <h3 class="font-display text-lg font-bold text-brand-dark mb-2">You approve, we fix</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Written quote, no verbal "and another $300 for…" surprises. You say go, we fix it — usually same visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+<footer class="bg-brand-dark text-white/60 py-16">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <p class="font-display text-xl font-bold text-white mb-3">D&amp;H Heating &amp; Air Conditioning</p>
+      <p class="text-sm leading-relaxed max-w-sm">Comfort, fixed right the first time. Family-owned, NATE-certified, BBB A+ — every truck, every visit, since 1972.</p>
+    </div>
+    <div>
+      <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Services</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="./ac-repair.html" class="hover:text-white">AC Repair</a></li>
+        <li><a href="./index.html#services" class="hover:text-white">Heating</a></li>
+        <li><a href="./index.html#services" class="hover:text-white">Indoor Air Quality</a></li>
+        <li><a href="./schedule.html" class="hover:text-white">Schedule Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Contact</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="tel:+15555550199" class="hover:text-white">(555) 555-0199</a></li>
+        <li><a href="mailto:service@dandhac.com" class="hover:text-white">service@dandhac.com</a></li>
+        <li class="text-white/50">[CLIENT TO PROVIDE address]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 md:px-6 mt-12 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-wrap justify-between gap-2">
+    <p>© 2026 D&amp;H Heating &amp; Air Conditioning. License #[CLIENT TO PROVIDE].</p>
+    <p>Family-owned since 1972.</p>
+  </div>
+</footer>
+
+<script src="./vendor-gsap.min.js"></script>
+<script src="./vendor-scrolltrigger.min.js"></script>
+<script src="./main.js"></script>
+<script>
+  // Urgency button toggle
+  const urgencyBtns = document.querySelectorAll('.urgency-btn');
+  const urgencyInput = document.getElementById('urgency-input');
+  const emergencyNotice = document.getElementById('emergency-notice');
+  urgencyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      urgencyBtns.forEach(b => b.setAttribute('aria-pressed','false'));
+      btn.setAttribute('aria-pressed','true');
+      urgencyInput.value = btn.dataset.value;
+      emergencyNotice.classList.toggle('hidden', btn.dataset.value !== 'emergency');
+    });
+  });
+</script>
+</body>
+</html>

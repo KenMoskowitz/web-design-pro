@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Honest HVAC work from a family that's been doing it since 1972. Same-day service. Upfront pricing. No surprises." />
+  <title>D&H Heating & Air Conditioning — Family-owned HVAC since 1972</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- LOCAL PREVIEW: compiled Tailwind. Production zero-build swap — replace this <link> with:
+         <script src="https://cdn.tailwindcss.com"></script>
+         <script>tailwind.config = { theme:{ extend:{
+           colors:{'brand-primary':'#0E2A47','brand-accent':'#E8731A','brand-dark':'#0A1F36','brand-light':'#F7F4EE'},
+           fontFamily:{display:['Manrope','sans-serif'],body:['Inter','sans-serif']}
+         } } };</script>
+  -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #F7F4EE; color: #0A1F36; }
+    .font-display { font-family: 'Manrope', system-ui, sans-serif; }
+    /* Header transition */
+    #site-header { transition: background-color 250ms ease, backdrop-filter 250ms ease, border-color 250ms ease; }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.55); backdrop-filter: blur(12px); border-bottom-color: rgba(255,255,255,0.08); }
+    /* Reduced motion — also covers screenshot/print environments. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      [data-anim], [data-reveal], [data-reveal] *, [data-stagger] > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ============================================================ -->
+<!-- HEADER                                                       -->
+<!-- ============================================================ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+  <nav class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+    <a href="./index.html" class="font-display text-xl font-bold text-white tracking-tight">D&H Heating & Air</a>
+
+    <div class="hidden md:flex items-center gap-7">
+      <a href="./index.html#services" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
+      <a href="./ac-repair.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">AC Repair</a>
+      <a href="./index.html#proof" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Reviews</a>
+      <a href="./index.html#about" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+      <a href="tel:+15555550199" class="text-white/90 hover:text-white text-sm font-semibold transition-colors duration-200 flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.9 1.37l.7 2.09a2 2 0 01-.45 2.02l-1.27 1.27a16 16 0 006.4 6.4l1.27-1.27a2 2 0 012.02-.45l2.09.7A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.6 21 3 14.4 3 6V5z"/></svg>
+        (555) 555-0199
+      </a>
+      <a href="./schedule.html" class="bg-brand-accent text-brand-dark px-5 py-2.5 rounded-lg text-sm font-semibold hover:scale-105 transition-transform duration-200">Schedule Service</a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu-panel" class="hidden md:hidden bg-brand-dark/95 backdrop-blur border-t border-white/10">
+    <div class="px-4 py-4 space-y-1">
+      <a href="./index.html#services" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Services</a>
+      <a href="./ac-repair.html" class="block py-3 text-white/85 hover:text-white border-b border-white/10">AC Repair</a>
+      <a href="./index.html#proof" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Reviews</a>
+      <a href="./index.html#about" class="block py-3 text-white/85 hover:text-white border-b border-white/10">About</a>
+      <a href="tel:+15555550199" class="block py-3 text-white/85 hover:text-white border-b border-white/10 font-semibold">Call (555) 555-0199</a>
+      <a href="./schedule.html" class="block mt-3 bg-brand-accent text-brand-dark text-center px-5 py-3 rounded-lg font-semibold">Schedule Service</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HERO                                                         -->
+<!-- ============================================================ -->
+<section id="top" class="relative min-h-[100svh] flex items-center bg-brand-primary text-white overflow-hidden">
+  <!-- Decorative gradient — single, subtle. Replace with brand photo when available. -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-dark"></div>
+  <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 20%, #E8731A33 0%, transparent 50%), radial-gradient(circle at 80% 80%, #E8731A22 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-32 md:py-40 w-full">
+    <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-6 opacity-0 translate-y-4" data-anim="eyebrow">
+      Family-owned · Licensed · Since 1972
+    </p>
+
+    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight max-w-4xl mb-6 opacity-0 translate-y-6" data-anim="headline">
+      Comfort, fixed right the first time.
+    </h1>
+
+    <p class="text-xl md:text-2xl text-white/75 max-w-2xl mb-10 leading-relaxed opacity-0 translate-y-6" data-anim="sub">
+      Family-owned HVAC since 1972. Same-day repair, honest pricing, and technicians who explain everything before they touch anything.
+    </p>
+
+    <div class="flex flex-wrap gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <a href="./schedule.html" class="inline-flex items-center justify-center bg-brand-accent text-brand-dark font-semibold px-8 py-4 rounded-lg text-lg hover:scale-105 transition-transform duration-200 shadow-lg min-h-[48px]">
+        Schedule Service
+      </a>
+      <a href="#services" class="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-brand-dark transition-colors duration-200 min-h-[48px]">
+        See How It Works
+      </a>
+    </div>
+
+    <!-- Inline social proof — single line, above the fold -->
+    <div class="mt-12 flex items-center gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <div class="flex -space-x-2">
+        <div class="w-10 h-10 rounded-full bg-brand-accent/30 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/50 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/70 border-2 border-brand-primary"></div>
+      </div>
+      <div class="text-sm text-white/80">
+        <span class="text-brand-accent font-semibold">★★★★★</span>
+        <span class="ml-2">4.9★ across 2,100+ reviews · A+ BBB · NATE-certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TRUST BAR                                                    -->
+<!-- ============================================================ -->
+<section class="bg-brand-dark py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <p class="text-center text-xs text-white/40 uppercase tracking-widest mb-8" data-reveal>Certified, accredited, and insured</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-80" data-stagger>
+      <!-- [CLIENT TO PROVIDE] real certification badge SVGs/PNGs. These text stand-ins keep the layout honest. -->
+      <div class="text-white/70 font-display text-base font-bold tracking-wide border border-white/20 rounded px-4 py-2">NATE&nbsp;CERTIFIED</div>
+      <div class="text-white/70 font-display text-base font-bold tracking-wide border border-white/20 rounded px-4 py-2">A+ BBB ACCREDITED</div>
+      <div class="text-white/70 font-display text-base font-bold tracking-wide border border-white/20 rounded px-4 py-2">CARRIER FACTORY AUTHORIZED</div>
+      <div class="text-white/70 font-display text-base font-bold tracking-wide border border-white/20 rounded px-4 py-2">ENERGY&nbsp;STAR PARTNER</div>
+      <div class="text-white/70 font-display text-base font-bold tracking-wide border border-white/20 rounded px-4 py-2">EPA 608 LICENSED</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES                                                     -->
+<!-- ============================================================ -->
+<section id="services" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">What we do</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">What we fix, install, and maintain.</h2>
+      <p class="text-xl text-gray-600">One company for the whole system. Heating, cooling, indoor air quality — repaired, replaced, and tuned by people who live in the same neighborhoods you do.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Service 1 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #E8731A1a;">
+          <svg class="w-7 h-7" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Air Conditioning</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">Same-day repair on every major brand. New system installs with a 10-year parts and labor warranty. Honest second opinions if another contractor told you to replace.</p>
+        <a href="./ac-repair.html" class="text-brand-dark font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #E8731A;">
+          See AC services
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #E8731A1a;">
+          <svg class="w-7 h-7" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Heating</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">Furnace and heat-pump repair, replacement, and annual safety inspections. We pull permits, register your warranty, and clean up before we leave. Always.</p>
+        <a href="./schedule.html" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #E8731A;">
+          See heating services
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #E8731A1a;">
+          <svg class="w-7 h-7" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Indoor Air Quality</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">Whole-home air purifiers, UV lights, humidifiers, and duct sealing. Stop dusting twice a week. Stop waking up with a dry throat. Stop guessing what's in your air.</p>
+        <a href="./schedule.html" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #E8731A;">
+          See IAQ services
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROOF                                                        -->
+<!-- ============================================================ -->
+<section id="proof" class="py-24 md:py-32 bg-brand-dark text-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">Proof</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Real reviews from real neighbors.</h2>
+      <p class="text-xl text-white/70">Not the cherry-picked five-star quotes. The ones that explain what we actually did.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Testimonial 1 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"Tech showed up two hours after I called on a 96-degree Saturday. Diagnosed a bad capacitor, had the part on the truck, $189 all-in. No upsell, no 'you really need a new system,' just fixed it. We've been customers for nine years and they're why."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #E8731A;">S.K.</div>
+          <div>
+            <p class="font-semibold">Sarah K.</p>
+            <p class="text-white/50 text-sm">Homeowner · Carmel, IN</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 2 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"Three other contractors quoted us a full system replacement at $14K+. D&H came out, ran an actual load calc, and said our existing unit had four good years left. They fixed the real problem (leaking duct) for $620. That's the kind of trust money can't buy."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #E8731A;">M.R.</div>
+          <div>
+            <p class="font-semibold">Marcus R.</p>
+            <p class="text-white/50 text-sm">Homeowner · Fishers, IN</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 3 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"We bought a 1920s house with a furnace that sounded like a freight train. The D&H crew designed a heat-pump system that fits the architecture, our utility bill dropped 38 percent, and the house is finally quiet. Wish I'd called them ten years ago."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #E8731A;">J.L.</div>
+          <div>
+            <p class="font-semibold">Jennifer L.</p>
+            <p class="text-white/50 text-sm">Homeowner · Broad Ripple, IN</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Stats row — delete if you can't provide real numbers. Do NOT invent. -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">52+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Years in Business</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">4.9★</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Across 2,100 Reviews</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">90 min</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Avg. Response Time</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">100%</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Satisfaction Guarantee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT                                                        -->
+<!-- ============================================================ -->
+<section id="about" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: #E8731A;">About</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-6 leading-tight">Three generations. One promise: do the job right.</h2>
+      <div class="text-lg text-gray-600 leading-relaxed space-y-4">
+        <p>D&amp;H started in 1972 when Don and Harold opened a one-truck shop out of a garage on the north side. The trucks are nicer now and there are more of them — but the rule hasn't changed: do the job the way you'd want it done at your own mother's house.</p>
+        <p>Today the third generation runs the company. Every technician is NATE-certified, background-checked, drug-tested, and put through a 90-day in-house apprenticeship before they're trusted in a customer's home alone. We pay our techs well so they stay — the average tenure on our crew is 11 years.</p>
+      </div>
+      <a href="./schedule.html" class="mt-8 inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all duration-200" style="color: #E8731A;">
+        Work with us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+      </a>
+    </div>
+    <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-brand-primary" data-reveal>
+      <!-- Replace with real photo: assets/dandhac-brand/about.jpg -->
+      <div class="absolute inset-0 flex items-center justify-center text-white/40 font-display text-xl">[CLIENT TO PROVIDE: family/crew photo]</div>
+      <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/60 via-transparent to-transparent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ                                                          -->
+<!-- ============================================================ -->
+<section id="faq" class="py-24 md:py-32 bg-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: #E8731A;">FAQ</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark">Common questions</h2>
+    </div>
+
+    <div class="space-y-3" data-reveal>
+      <!-- FAQ items — answer real objections, not fluff -->
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">Do you charge for diagnostics?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #E8731A;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          Standard service call is $89 and is fully credited toward any repair you approve. No surprise add-ons, no "trip fee" plus diagnostic fee plus inspection fee. One flat number.
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">How fast can you actually get here?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #E8731A;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          For no-cool / no-heat emergencies during business hours, our average response is 90 minutes. Same-day for everything else. After-hours and weekend service available 24/7 at a posted overtime rate (no mystery pricing).
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">What if I just want a second opinion?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #E8731A;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          We love this question. Bring us the other contractor's quote — we'll do a free in-home review, run a real Manual J load calculation if it's a replacement quote, and tell you straight whether their recommendation is right. About 30% of the time, it isn't.
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">What service area do you cover?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #E8731A;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          [CLIENT TO PROVIDE service area — typically a 25-30 mile radius. List the major neighborhoods or zip codes.] If you're not sure, call us — if we can't help you, we know who can.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT                                                      -->
+<!-- ============================================================ -->
+<section id="contact" class="py-24 md:py-32 bg-brand-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #E8731A55 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6" data-reveal>Schedule service in under a minute.</h2>
+    <p class="text-white/80 text-xl mb-12 max-w-xl mx-auto" data-reveal>Tell us what's wrong. We'll confirm a window and a tech name within the hour.</p>
+
+    <form id="contact-form" class="bg-white rounded-2xl p-6 md:p-8 text-left shadow-2xl text-brand-dark" data-reveal novalidate>
+      <div class="grid md:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label for="cf-name" class="block text-sm font-semibold text-gray-700 mb-2">Full name <span style="color: #E8731A;">*</span></label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: #E8731A;" />
+        </div>
+        <div>
+          <label for="cf-email" class="block text-sm font-semibold text-gray-700 mb-2">Email <span style="color: #E8731A;">*</span></label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: #E8731A;" />
+        </div>
+      </div>
+      <div class="mb-5">
+        <label for="cf-phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+               class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+               style="--tw-ring-color: #E8731A;" />
+      </div>
+      <div class="mb-6">
+        <label for="cf-message" class="block text-sm font-semibold text-gray-700 mb-2">How can we help?</label>
+        <textarea id="cf-message" name="message" rows="4"
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition resize-none"
+                  style="--tw-ring-color: #E8731A;"></textarea>
+      </div>
+      <button type="submit"
+              class="w-full font-bold py-4 rounded-lg text-lg hover:scale-[1.02] transition-transform duration-200 shadow-lg min-h-[48px]"
+              style="background-color: #E8731A; color: #0A1F36;">
+        Schedule Service
+      </button>
+      <p class="text-center text-gray-500 text-sm mt-4">No spam. We respond within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer class="bg-brand-dark text-white/70 py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <p class="font-display text-xl font-bold text-white mb-3">D&H Heating & Air Conditioning</p>
+        <p class="text-sm text-white/60 max-w-sm leading-relaxed">Comfort, fixed right the first time.</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Navigate</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#proof" class="hover:text-white transition-colors">Results</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Contact</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:[email@dandhac.com]" class="hover:text-white transition-colors">[email@dandhac.com]</a></li>
+          <li><a href="tel:[+15551234567]" class="hover:text-white transition-colors">[+1 (555) 123-4567]</a></li>
+          <li class="text-white/50">[Address line 1]<br/>[City, State ZIP]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-white/40">
+      <p>&copy; <span id="year"></span> D&H Heating & Air Conditioning. All rights reserved.</p>
+      <p>Designed with the huashu-design system.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- SCRIPTS (loaded at end of body)                              -->
+<!-- ============================================================ -->
+<script src="./vendor-gsap.min.js"></script>
+<script src="./vendor-scrolltrigger.min.js"></script>
+<script src="./main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
