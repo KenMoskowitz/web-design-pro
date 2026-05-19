@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Killer ad creative for the algorithm age. We're not your copywriter — we're your creative team." />
+  <title>Ad Zombies — Killer ad creative for the algorithm age</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- LOCAL PREVIEW: compiled Tailwind so this works offline.
+       Production swap (zero-build) — replace this <link> with:
+         <script src="https://cdn.tailwindcss.com"></script>
+         <script>tailwind.config = { theme:{ extend:{ colors:{
+           'brand-primary':'#0a0a0a','brand-accent':'#7CFC00',
+           'brand-dark':'#0a0a0a','brand-light':'#f5f5f5'
+         }, fontFamily:{ display:['Bungee','sans-serif'], body:['Inter','sans-serif'] } } } };</script>
+  -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; }
+    .font-display { font-family: 'Bungee', serif; }
+    /* Header transition */
+    #site-header { transition: background-color 250ms ease, backdrop-filter 250ms ease, border-color 250ms ease; }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.55); backdrop-filter: blur(12px); border-bottom-color: rgba(255,255,255,0.08); }
+    /* Reduced motion — also covers screenshot/print environments. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      [data-anim], [data-reveal], [data-reveal] *, [data-stagger] > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ============================================================ -->
+<!-- HEADER                                                       -->
+<!-- ============================================================ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+  <nav class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display text-xl font-bold text-white tracking-tight">Ad Zombies</a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
+      <a href="#proof" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">Results</a>
+      <a href="#about" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+      <a href="#faq" class="text-white/80 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+      <a href="#contact" class="bg-brand-accent text-brand-dark px-5 py-2.5 rounded-lg text-sm font-semibold hover:scale-105 transition-transform duration-200">Get a Quote</a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu-panel" class="hidden md:hidden bg-brand-dark/95 backdrop-blur border-t border-white/10">
+    <div class="px-4 py-4 space-y-1">
+      <a href="#services" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Services</a>
+      <a href="#proof" class="block py-3 text-white/85 hover:text-white border-b border-white/10">Results</a>
+      <a href="#about" class="block py-3 text-white/85 hover:text-white border-b border-white/10">About</a>
+      <a href="#faq" class="block py-3 text-white/85 hover:text-white border-b border-white/10">FAQ</a>
+      <a href="#contact" class="block mt-3 bg-brand-accent text-brand-dark text-center px-5 py-3 rounded-lg font-semibold">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HERO                                                         -->
+<!-- ============================================================ -->
+<section id="top" class="relative min-h-[100svh] flex items-center bg-brand-primary text-white overflow-hidden">
+  <!-- Decorative gradient — single, subtle. Replace with brand photo when available. -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-dark"></div>
+  <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 20%, #7CFC0033 0%, transparent 50%), radial-gradient(circle at 80% 80%, #7CFC0022 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 md:px-6 py-32 md:py-40 w-full">
+    <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-6 opacity-0 translate-y-4" data-anim="eyebrow">
+      Ad Creative Studio — Est. 2015
+    </p>
+
+    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight max-w-4xl mb-6 opacity-0 translate-y-6" data-anim="headline">
+      Ad creative that eats your competition.
+    </h1>
+
+    <p class="text-xl md:text-2xl text-white/75 max-w-2xl mb-10 leading-relaxed opacity-0 translate-y-6" data-anim="sub">
+      Static, video, and motion ad creative built for paid social and programmatic. Briefs in by Monday, ads in your hands by Friday. We are not copywriters. We are creative.
+    </p>
+
+    <div class="flex flex-wrap gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <a href="#contact" class="inline-flex items-center justify-center bg-brand-accent text-brand-dark font-semibold px-8 py-4 rounded-lg text-lg hover:scale-105 transition-transform duration-200 shadow-lg min-h-[48px]">
+        Get a Quote
+      </a>
+      <a href="#services" class="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-brand-dark transition-colors duration-200 min-h-[48px]">
+        See How It Works
+      </a>
+    </div>
+
+    <!-- Inline social proof — single line, above the fold -->
+    <div class="mt-12 flex items-center gap-4 opacity-0 translate-y-6" data-anim="cta">
+      <div class="flex -space-x-2">
+        <div class="w-10 h-10 rounded-full bg-brand-accent/30 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/50 border-2 border-brand-primary"></div>
+        <div class="w-10 h-10 rounded-full bg-brand-accent/70 border-2 border-brand-primary"></div>
+      </div>
+      <div class="text-sm text-white/80">
+        <span class="text-brand-accent font-semibold">★★★★★</span>
+        <span class="ml-2">3,400+ brands · 180,000+ ads shipped</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TRUST BAR                                                    -->
+<!-- ============================================================ -->
+<section class="bg-brand-dark py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <p class="text-center text-xs text-white/40 uppercase tracking-widest mb-8" data-reveal>Creative for brands you know</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-70" data-stagger>
+      <!-- [CLIENT TO PROVIDE] real client logos. Keep grayscale; lighten on hover. -->
+      <div class="text-white/60 font-display text-xl">[DTC Brand]</div>
+      <div class="text-white/60 font-display text-xl tracking-tight">[Agency Partner]</div>
+      <div class="text-white/60 font-display text-xl italic">[E-com Brand]</div>
+      <div class="text-white/60 font-display text-xl uppercase tracking-widest">[SaaS Co]</div>
+      <div class="text-white/60 font-display text-xl">[Retail Brand]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES                                                     -->
+<!-- ============================================================ -->
+<section id="services" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">What we do</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">Three things. Done at speed.</h2>
+      <p class="text-xl text-gray-600">We do ad creative. Not strategy decks. Not campaign management. Not the same flat-rate copy gigs everyone else stopped paying for in 2024.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Service 1 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #7CFC001a;">
+          <svg class="w-7 h-7" fill="none" stroke="#7CFC00" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Static Ad Creative</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">Scroll-stopping image ads for Meta, TikTok, Pinterest, and Google Display. We ship in sets — usually 8 to 24 variations per concept — so you can actually test instead of guess.</p>
+        <a href="#contact" class="text-brand-dark font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #7CFC00;">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #7CFC001a;">
+          <svg class="w-7 h-7" fill="none" stroke="#7CFC00" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Video Ad Creative</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">UGC-style spots, motion graphics, hook-cut variations. Built for paid social where the first 1.7 seconds is the whole game. Multiple lengths, multiple hooks, one brief.</p>
+        <a href="#contact" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #7CFC00;">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" style="background-color: #7CFC001a;">
+          <svg class="w-7 h-7" fill="none" stroke="#7CFC00" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Iteration Sprints</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">Monthly retainer for brands fighting ad fatigue. Fresh creative every week — new hooks, new angles, new edits — so your accounts never run dry and your CPMs never balloon.</p>
+        <a href="#contact" class="font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-200" style="color: #7CFC00;">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROOF                                                        -->
+<!-- ============================================================ -->
+<section id="proof" class="py-24 md:py-32 bg-brand-dark text-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-16 max-w-2xl mx-auto" data-reveal>
+      <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">Proof</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Brands that don't run boring ads.</h2>
+      <p class="text-xl text-white/70">What clients say after their CPMs drop and CTRs climb.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-stagger>
+      <!-- Testimonial 1 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"They shipped 18 video variations in nine days. Three of them are still in our top performers six months later. Nobody else moves that fast and lands that often."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #7CFC00;">J.M.</div>
+          <div>
+            <p class="font-semibold">Jordan M.</p>
+            <p class="text-white/50 text-sm">Head of Growth, DTC skincare brand</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 2 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"We used to wait six weeks for a creative batch from our agency. Ad Zombies hands us a fresh set every Friday. CPMs are down 38 percent and we finally have something new to test on Monday morning."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #7CFC00;">R.P.</div>
+          <div>
+            <p class="font-semibold">Rachel P.</p>
+            <p class="text-white/50 text-sm">Performance Marketing Lead, e-commerce</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonial 3 -->
+      <figure class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+        <div class="flex gap-1 mb-4 text-brand-accent" aria-label="5 out of 5 stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote class="text-white/85 leading-relaxed mb-6">"As an agency, we tried to keep creative in-house. We were drowning. Ad Zombies became our white-label creative team — same quality, half the cost, ten times the speed."</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-brand-dark" style="background-color: #7CFC00;">D.T.</div>
+          <div>
+            <p class="font-semibold">Devin T.</p>
+            <p class="text-white/50 text-sm">Founder, paid social agency</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- [CLIENT TO PROVIDE] — confirm these stats before shipping. Replace any you can't defend. -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">180K+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Ads Shipped</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">3,400+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Brands Served</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">72hr</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">Avg. Turnaround</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-brand-accent mb-2">10 yrs</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest">In the Trenches</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT                                                        -->
+<!-- ============================================================ -->
+<section id="about" class="py-24 md:py-32 bg-brand-light">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: #7CFC00;">About</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-6 leading-tight">We pivoted before the rest of the industry knew it had to.</h2>
+      <div class="text-lg text-gray-600 leading-relaxed space-y-4">
+        <p>Ad Zombies started in 2015 as a copywriting shop. We were good at it. Then AI changed what "copy" was worth — and instead of squeezing margins out of a dying service, we killed it ourselves.</p>
+        <p>Today we do the work AI can't do alone: real creative thinking, brand voice that doesn't sound like a chatbot, and the production muscle to turn briefs into ad sets at speed. The old Ad Zombies wrote your headlines. The new Ad Zombies makes the ads they live inside of.</p>
+      </div>
+      <a href="#contact" class="mt-8 inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all duration-200" style="color: #7CFC00;">
+        Work with us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+      </a>
+    </div>
+    <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-brand-primary" data-reveal>
+      <!-- Replace with real photo: assets/adzombies-brand/about.jpg -->
+      <div class="absolute inset-0 flex items-center justify-center text-white/40 font-display text-xl">[ABOUT PHOTO]</div>
+      <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/60 via-transparent to-transparent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ                                                          -->
+<!-- ============================================================ -->
+<section id="faq" class="py-24 md:py-32 bg-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12" data-reveal>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: #7CFC00;">FAQ</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark">Common questions</h2>
+    </div>
+
+    <div class="space-y-3" data-reveal>
+      <!-- FAQ items — answer real objections, not fluff -->
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">Wait — aren't you a copywriting agency?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #7CFC00;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          We were. We don't sell flat-rate copy or campaign management anymore — AI ate that lunch and we don't try to compete with $20/month tools. We pivoted in 2024 to ad creative: the visual production layer that AI can't ship by itself yet. If you're looking for the old service, plenty of folks still sell it. We're doing something different now.
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">How fast can you actually turn around creative?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #7CFC00;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          Static ad sets: 48 to 72 hours from brief approval. Video ads: 5 to 10 business days depending on whether it's UGC, motion, or hybrid. Retainer clients get weekly drops — Monday brief, Friday delivery — every week, no exceptions.
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">Will you work inside our brand guidelines?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #7CFC00;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          Yes. Send us your brand book, your top three winners, and three losers. We learn your voice fast — that's the whole job. We also white-label for agencies who need overflow creative capacity without their clients knowing it isn't in-house.
+        </div>
+      </div>
+
+      <div data-faq class="border border-gray-200 rounded-xl overflow-hidden">
+        <button data-faq-trigger class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors min-h-[48px]" aria-expanded="false">
+          <span class="font-semibold text-brand-dark">What platforms do you make ads for?</span>
+          <span data-faq-icon class="text-2xl font-light transition-transform duration-200" style="color: #7CFC00;">+</span>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-gray-600 leading-relaxed">
+          Meta (Facebook + Instagram), TikTok, YouTube Shorts, Pinterest, Snapchat, Google Display, and programmatic banner sizes. Every deliverable comes platform-spec'd, with the aspect ratios and lengths the algorithm actually serves.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT                                                      -->
+<!-- ============================================================ -->
+<section id="contact" class="py-24 md:py-32 bg-brand-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #7CFC0055 0%, transparent 50%);"></div>
+
+  <div class="relative max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6" data-reveal>Tell us what you need creative for.</h2>
+    <p class="text-white/80 text-xl mb-12 max-w-xl mx-auto" data-reveal>Quote back within one business day. No discovery call required.</p>
+
+    <form id="contact-form" class="bg-white rounded-2xl p-6 md:p-8 text-left shadow-2xl text-brand-dark" data-reveal novalidate>
+      <div class="grid md:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label for="cf-name" class="block text-sm font-semibold text-gray-700 mb-2">Full name <span style="color: #7CFC00;">*</span></label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: #7CFC00;" />
+        </div>
+        <div>
+          <label for="cf-email" class="block text-sm font-semibold text-gray-700 mb-2">Email <span style="color: #7CFC00;">*</span></label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email"
+                 class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+                 style="--tw-ring-color: #7CFC00;" />
+        </div>
+      </div>
+      <div class="mb-5">
+        <label for="cf-phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+               class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition min-h-[48px]"
+               style="--tw-ring-color: #7CFC00;" />
+      </div>
+      <div class="mb-6">
+        <label for="cf-message" class="block text-sm font-semibold text-gray-700 mb-2">How can we help?</label>
+        <textarea id="cf-message" name="message" rows="4"
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 transition resize-none"
+                  style="--tw-ring-color: #7CFC00;"></textarea>
+      </div>
+      <button type="submit"
+              class="w-full font-bold py-4 rounded-lg text-lg hover:scale-[1.02] transition-transform duration-200 shadow-lg min-h-[48px]"
+              style="background-color: #7CFC00; color: #0a0a0a;">
+        Get a Quote
+      </button>
+      <p class="text-center text-gray-500 text-sm mt-4">No spam. We respond within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer class="bg-brand-dark text-white/70 py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <p class="font-display text-xl font-bold text-white mb-3">Ad Zombies</p>
+        <p class="text-sm text-white/60 max-w-sm leading-relaxed">Killer ad creative for the algorithm age.</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Navigate</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#proof" class="hover:text-white transition-colors">Results</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Contact</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:hello@adzombies.com" class="hover:text-white transition-colors">hello@adzombies.com</a></li>
+          <li><a href="tel:+18005550199" class="hover:text-white transition-colors">[CLIENT TO PROVIDE phone]</a></li>
+          <li class="text-white/50">[CLIENT TO PROVIDE address]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-white/40">
+      <p>&copy; <span id="year"></span> Ad Zombies. All rights reserved.</p>
+      <p>Designed with the huashu-design system.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- SCRIPTS (loaded at end of body)                              -->
+<!-- ============================================================ -->
+<!-- LOCAL PREVIEW: vendored GSAP. Swap to CDN for deploy if preferred. -->
+<script src="./vendor-gsap.min.js"></script>
+<script src="./vendor-scrolltrigger.min.js"></script>
+<script src="./main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
