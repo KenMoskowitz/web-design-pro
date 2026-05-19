@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Schedule HVAC service with D&H. Same-day appointments available. Confirmed within one hour." />
-  <title>Schedule Service — D&H Heating & Air Conditioning</title>
+  <meta name="description" content="Schedule HVAC or plumbing service with D&H Tucson. 24/7 emergency dispatch. Confirmed within one hour. Family-owned since 1959." />
+  <title>Schedule Service — D&H Air Conditioning &amp; Heating &amp; Plumbing</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,18 +28,18 @@
 </head>
 <body class="antialiased">
 
-<!-- HEADER (shared) -->
+<!-- HEADER -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
   <nav class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-    <a href="./index.html" class="font-display text-xl font-bold text-white tracking-tight">D&amp;H Heating &amp; Air</a>
+    <a href="./index.html" class="font-display text-xl font-bold text-white tracking-tight">D&amp;H Air Conditioning</a>
     <div class="hidden md:flex items-center gap-7">
       <a href="./index.html#services" class="text-white/80 hover:text-white text-sm font-medium">Services</a>
       <a href="./ac-repair.html" class="text-white/80 hover:text-white text-sm font-medium">AC Repair</a>
       <a href="./index.html#proof" class="text-white/80 hover:text-white text-sm font-medium">Reviews</a>
       <a href="./index.html#about" class="text-white/80 hover:text-white text-sm font-medium">About</a>
-      <a href="tel:+15555550199" class="text-white/90 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+      <a href="tel:+15204082665" class="text-white/90 hover:text-white text-sm font-semibold flex items-center gap-1.5">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.9 1.37l.7 2.09a2 2 0 01-.45 2.02l-1.27 1.27a16 16 0 006.4 6.4l1.27-1.27a2 2 0 012.02-.45l2.09.7A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.6 21 3 14.4 3 6V5z"/></svg>
-        (555) 555-0199
+        (520) 408-2665
       </a>
       <span class="bg-white/15 text-white px-5 py-2.5 rounded-lg text-sm font-semibold border border-white/20">Scheduling</span>
     </div>
@@ -53,7 +53,7 @@
       <a href="./ac-repair.html" class="block py-3 text-white/85 border-b border-white/10">AC Repair</a>
       <a href="./index.html#proof" class="block py-3 text-white/85 border-b border-white/10">Reviews</a>
       <a href="./index.html#about" class="block py-3 text-white/85 border-b border-white/10">About</a>
-      <a href="tel:+15555550199" class="block py-3 text-white/85 border-b border-white/10 font-semibold">Call (555) 555-0199</a>
+      <a href="tel:+15204082665" class="block py-3 text-white/85 border-b border-white/10 font-semibold">Call (520) 408-2665</a>
     </div>
   </div>
 </header>
@@ -67,7 +67,7 @@
     <div class="text-center mb-12 max-w-2xl mx-auto" data-reveal>
       <p class="text-brand-accent text-sm font-semibold uppercase tracking-widest mb-4">Schedule Service</p>
       <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-4">Tell us what's wrong.</h1>
-      <p class="text-xl text-white/80 leading-relaxed">A real human reads every request. We'll confirm a tech name and an arrival window within one business hour.</p>
+      <p class="text-xl text-white/80 leading-relaxed">A real human reads every request, 24 hours a day. We'll confirm a tech name and an arrival window within one hour.</p>
     </div>
   </div>
 </section>
@@ -84,7 +84,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup">
           <button type="button" class="urgency-btn border border-gray-300 rounded-lg px-4 py-4 text-left hover:border-brand-accent" aria-pressed="false" data-value="emergency">
             <span class="font-semibold block">Emergency</span>
-            <span class="text-sm text-gray-500">No heat / no cool, today</span>
+            <span class="text-sm text-gray-500">No cool / no heat, today</span>
           </button>
           <button type="button" class="urgency-btn border border-gray-300 rounded-lg px-4 py-4 text-left hover:border-brand-accent" aria-pressed="true" data-value="soon">
             <span class="font-semibold block">Soon</span>
@@ -97,9 +97,8 @@
         </div>
         <input type="hidden" name="urgency" value="soon" id="urgency-input">
 
-        <!-- Emergency notice -->
         <div id="emergency-notice" class="hidden mt-4 bg-brand-accent/10 border-l-4 border-brand-accent p-4 rounded">
-          <p class="text-sm text-brand-dark"><strong>Emergency?</strong> Call us at <a href="tel:+15555550199" class="font-semibold underline">(555) 555-0199</a> — we'll get a tech rolling faster than this form can.</p>
+          <p class="text-sm text-brand-dark"><strong>Emergency?</strong> Call our 24/7 line at <a href="tel:+15204082665" class="font-semibold underline">(520) 408-2665</a> — we'll get a tech rolling faster than this form can.</p>
         </div>
       </fieldset>
 
@@ -116,6 +115,10 @@
             <span class="block text-sm font-semibold">Heating Repair</span>
           </label>
           <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
+            <input type="radio" name="service" value="plumbing" class="sr-only">
+            <span class="block text-sm font-semibold">Plumbing</span>
+          </label>
+          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
             <input type="radio" name="service" value="new-install" class="sr-only">
             <span class="block text-sm font-semibold">New System Quote</span>
           </label>
@@ -128,12 +131,8 @@
             <span class="block text-sm font-semibold">Indoor Air Quality</span>
           </label>
           <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
-            <input type="radio" name="service" value="second-opinion" class="sr-only">
-            <span class="block text-sm font-semibold">Second Opinion</span>
-          </label>
-          <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
-            <input type="radio" name="service" value="duct" class="sr-only">
-            <span class="block text-sm font-semibold">Duct Work</span>
+            <input type="radio" name="service" value="insulation" class="sr-only">
+            <span class="block text-sm font-semibold">Insulation</span>
           </label>
           <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent">
             <input type="radio" name="service" value="not-sure" class="sr-only">
@@ -160,7 +159,7 @@
           </div>
           <div>
             <label for="f-zip" class="block text-sm font-semibold text-gray-700 mb-1.5">ZIP code *</label>
-            <input id="f-zip" type="text" required autocomplete="postal-code" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
+            <input id="f-zip" type="text" required autocomplete="postal-code" placeholder="857__" class="w-full border border-gray-300 rounded-lg px-4 py-3 min-h-[48px]">
           </div>
           <div class="md:col-span-2">
             <label for="f-address" class="block text-sm font-semibold text-gray-700 mb-1.5">Service address</label>
@@ -176,7 +175,7 @@
           <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
             <input type="checkbox" name="window" value="morning" class="sr-only">
             <span class="block text-sm font-semibold">Morning</span>
-            <span class="block text-xs text-gray-500">8 – noon</span>
+            <span class="block text-xs text-gray-500">7 – noon</span>
           </label>
           <label class="border border-gray-300 rounded-lg p-3 cursor-pointer hover:border-brand-accent has-[:checked]:bg-brand-accent/10 has-[:checked]:border-brand-accent text-center">
             <input type="checkbox" name="window" value="afternoon" class="sr-only">
@@ -205,7 +204,7 @@
       <button type="submit" class="w-full bg-brand-accent text-brand-dark font-bold py-4 rounded-lg text-lg hover:scale-[1.01] transition-transform shadow-lg min-h-[48px]">
         Send Service Request
       </button>
-      <p class="text-center text-gray-500 text-sm mt-4">We'll text or call within one business hour with a confirmed window and tech name.</p>
+      <p class="text-center text-gray-500 text-sm mt-4">We'll text or call within one hour with a confirmed window and tech name.</p>
     </form>
 
     <!-- TRUST SIDEBAR -->
@@ -213,14 +212,17 @@
       <!-- Phone CTA -->
       <div class="bg-brand-primary text-white rounded-2xl p-6 shadow-lg">
         <p class="text-brand-accent text-xs font-semibold uppercase tracking-widest mb-2">Faster than a form?</p>
-        <p class="font-display text-2xl font-bold mb-3">Call us directly.</p>
-        <a href="tel:+15555550199" class="block bg-brand-accent text-brand-dark text-center font-bold py-3 rounded-lg hover:scale-105 transition-transform">
-          (555) 555-0199
+        <p class="font-display text-2xl font-bold mb-3">Call us 24/7.</p>
+        <a href="tel:+15204082665" class="block bg-brand-accent text-brand-dark text-center font-bold py-3 rounded-lg hover:scale-105 transition-transform mb-2">
+          (520) 408-2665
         </a>
-        <p class="text-white/60 text-sm mt-3">Real humans answer Mon–Sat, 7am–7pm. After-hours line for emergencies.</p>
+        <a href="tel:+15203321533" class="block border-2 border-white/30 text-white text-center font-semibold py-3 rounded-lg hover:bg-white hover:text-brand-dark transition-colors">
+          (520) 332-1533
+        </a>
+        <p class="text-white/60 text-sm mt-3">Real humans answer 24 hours a day, 365 days a year. Two Tucson locations.</p>
       </div>
 
-      <!-- Trust facts -->
+      <!-- Trust facts — verified credentials only -->
       <div class="bg-white rounded-2xl p-6 border border-gray-200">
         <ul class="space-y-4">
           <li class="flex gap-3 items-start">
@@ -228,8 +230,8 @@
               <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
-              <p class="font-semibold text-brand-dark">90-min avg. response</p>
-              <p class="text-sm text-gray-600">During business hours, Mon–Sat</p>
+              <p class="font-semibold text-brand-dark">24/7 emergency dispatch</p>
+              <p class="text-sm text-gray-600">365 days a year, real humans answer.</p>
             </div>
           </li>
           <li class="flex gap-3 items-start">
@@ -237,8 +239,8 @@
               <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
-              <p class="font-semibold text-brand-dark">4.9★ across 2,100+ reviews</p>
-              <p class="text-sm text-gray-600">Google, Yelp, BBB combined</p>
+              <p class="font-semibold text-brand-dark">BBB A+ accredited</p>
+              <p class="text-sm text-gray-600">NATE-certified · Pearl Contractor.</p>
             </div>
           </li>
           <li class="flex gap-3 items-start">
@@ -246,21 +248,17 @@
               <svg class="w-5 h-5" fill="none" stroke="#E8731A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
             </div>
             <div>
-              <p class="font-semibold text-brand-dark">Family-owned since 1972</p>
-              <p class="text-sm text-gray-600">Third generation, same standards</p>
+              <p class="font-semibold text-brand-dark">Family-owned since 1959</p>
+              <p class="text-sm text-gray-600">Sixty-five years of Tucson summers.</p>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- Hours -->
+      <!-- Service area -->
       <div class="bg-white rounded-2xl p-6 border border-gray-200">
-        <p class="font-display text-base font-bold text-brand-dark mb-3">Hours</p>
-        <ul class="text-sm text-gray-700 space-y-1.5">
-          <li class="flex justify-between"><span>Mon – Fri</span><span class="text-gray-500">7am – 7pm</span></li>
-          <li class="flex justify-between"><span>Saturday</span><span class="text-gray-500">8am – 5pm</span></li>
-          <li class="flex justify-between"><span>Sunday</span><span class="text-gray-500">Emergency only</span></li>
-        </ul>
+        <p class="font-display text-base font-bold text-brand-dark mb-3">Where we serve</p>
+        <p class="text-sm text-gray-700 leading-relaxed">Tucson · Marana · Oro Valley · Vail · Green Valley · Sahuarita · and surrounding Southern Arizona communities.</p>
       </div>
     </aside>
   </div>
@@ -274,12 +272,12 @@
       <div class="text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">1</div>
         <h3 class="font-display text-lg font-bold text-brand-dark mb-2">Within 1 hour</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">A dispatcher (named Sandy, usually) calls or texts to confirm your appointment window and which tech to expect.</p>
+        <p class="text-gray-600 text-sm leading-relaxed">A dispatcher calls or texts to confirm your appointment window and which tech to expect.</p>
       </div>
       <div class="text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">2</div>
         <h3 class="font-display text-lg font-bold text-brand-dark mb-2">Tech arrives on time</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">You'll get a text with the tech's photo and ETA 30 minutes out. Shoe covers go on at the door. Diagnostic is $89 flat.</p>
+        <p class="text-gray-600 text-sm leading-relaxed">You'll get a text with the tech's photo and ETA 30 minutes out. Shoe covers go on at the door.</p>
       </div>
       <div class="text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-accent flex items-center justify-center font-display text-lg font-bold text-brand-dark">3</div>
@@ -290,18 +288,19 @@
   </div>
 </section>
 
-<!-- FOOTER (shared) -->
+<!-- FOOTER -->
 <footer class="bg-brand-dark text-white/60 py-16">
   <div class="max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-10">
     <div class="md:col-span-2">
-      <p class="font-display text-xl font-bold text-white mb-3">D&amp;H Heating &amp; Air Conditioning</p>
-      <p class="text-sm leading-relaxed max-w-sm">Comfort, fixed right the first time. Family-owned, NATE-certified, BBB A+ — every truck, every visit, since 1972.</p>
+      <p class="font-display text-xl font-bold text-white mb-3">D&amp;H Air Conditioning &amp; Heating &amp; Plumbing</p>
+      <p class="text-sm leading-relaxed max-w-sm">Family-owned in Tucson since 1959. NATE-certified, BBB A+, Pearl Contractor — every truck, every visit.</p>
     </div>
     <div>
       <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Services</p>
       <ul class="space-y-2 text-sm">
         <li><a href="./ac-repair.html" class="hover:text-white">AC Repair</a></li>
         <li><a href="./index.html#services" class="hover:text-white">Heating</a></li>
+        <li><a href="./index.html#services" class="hover:text-white">Plumbing</a></li>
         <li><a href="./index.html#services" class="hover:text-white">Indoor Air Quality</a></li>
         <li><a href="./schedule.html" class="hover:text-white">Schedule Service</a></li>
       </ul>
@@ -309,15 +308,15 @@
     <div>
       <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Contact</p>
       <ul class="space-y-2 text-sm">
-        <li><a href="tel:+15555550199" class="hover:text-white">(555) 555-0199</a></li>
-        <li><a href="mailto:service@dandhac.com" class="hover:text-white">service@dandhac.com</a></li>
-        <li class="text-white/50">[CLIENT TO PROVIDE address]</li>
+        <li><a href="tel:+15204082665" class="hover:text-white">(520) 408-2665 · S. Tucson</a></li>
+        <li><a href="tel:+15203321533" class="hover:text-white">(520) 332-1533 · Central</a></li>
+        <li class="text-white/50 pt-2">3990 S Evans Blvd<br/>Tucson, AZ 85714</li>
       </ul>
     </div>
   </div>
   <div class="max-w-6xl mx-auto px-4 md:px-6 mt-12 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-wrap justify-between gap-2">
-    <p>© 2026 D&amp;H Heating &amp; Air Conditioning. License #[CLIENT TO PROVIDE].</p>
-    <p>Family-owned since 1972.</p>
+    <p>© <span id="year-sched"></span> D&amp;H Air Conditioning &amp; Heating &amp; Plumbing. License #[CLIENT TO PROVIDE].</p>
+    <p>Family-owned in Tucson since 1959.</p>
   </div>
 </footer>
 
@@ -337,6 +336,7 @@
       emergencyNotice.classList.toggle('hidden', btn.dataset.value !== 'emergency');
     });
   });
+  document.getElementById('year-sched').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
